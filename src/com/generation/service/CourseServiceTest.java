@@ -13,11 +13,14 @@ import static org.junit.Assert.assertNull;
 public class CourseServiceTest {
     private CourseService courseService;
 
+    // Set up the CourseService instance before each test
     @Before
     public void setUp() {
         courseService = new CourseService();
     }
 
+    /* Test the registerCourse() method by registering a course,
+    then checking if it was added successfully */
     @Test
     public void testRegisterCourse() {
         Module testModule = new Module("TEST-MODULE", "Test Module", "This is a test module");
@@ -32,6 +35,8 @@ public class CourseServiceTest {
         assertEquals(testCourse, registeredCourse);
     }
 
+    /* Test the getCourse() method by checking that it returns
+    an existing course. For a non-existing course, check that it returns null */
     @Test
     public void testGetCourse() {
         // Get a course that exists in the CourseService
@@ -39,7 +44,7 @@ public class CourseServiceTest {
         assertNotNull(existingCourse);
         assertEquals("Introduction to Computer Science", existingCourse.getName());
 
-        // Get a course that doesn't exist in the CourseService
+        // Get a non-existing course in the CourseService
         Course nonExistingCourse = courseService.getCourse("NON-EXISTING-COURSE");
         assertNull(nonExistingCourse);
     }
