@@ -44,7 +44,7 @@ public class PrinterHelper
 
         // Check if input is valid
             // If input is valid, continue
-            // If input is invalid, reprompt
+            // If input is invalid, prompt again
         Date birthDate = null;
         while(birthDate==null) {
             try {

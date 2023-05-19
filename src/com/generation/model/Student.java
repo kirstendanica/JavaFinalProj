@@ -1,10 +1,6 @@
 package com.generation.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Student
         extends Person
@@ -16,7 +12,7 @@ public class Student
 
     private final Map<String, Course> approvedCourses = new HashMap<>();
 
-    public Student( String id, String name, String email, Date birthDate )
+    public Student(String id, String name, String email, Date birthDate )
     {
         super( id, name, email, birthDate );
     }
